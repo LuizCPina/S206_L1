@@ -2,27 +2,16 @@
 
 describe("Testes de criação, registro e login", ()=>{
     it("Teste criação de usuario com sucesso", ()=>{
-        let info = criarUser()
-        cy.visit('https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login')
-        cy.get('.btn-link').click()
-        cy.get('#firstName').type(info[0])
-        cy.get('#Text1').type(info[0])
-        cy.get('#username').type(info[0])
-        cy.get('#password').type(info[1])
-        cy.get('.btn-primary').click()
-        cy.get('.ng-binding').should("contain.text","Registration succesful")
-
-       
-        
+        criarUser()        
     })
 
-    it.skip("Teste de criação de ususario com falha",()=>{
+    it("Teste de criação de ususario com falha",()=>{
         cy.visit('https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login')
         cy.get('.btn-link').click()
         cy.get('#firstName').type("luiz")
         cy.get('#Text1').type("luiz")
         cy.get('#username').type("luiz")
-        cy.get('.form-actions').should("be.disabled")
+        cy.get('.btn-primary').should("be.disabled")
         
     })
 
@@ -32,6 +21,7 @@ describe("Testes de criação, registro e login", ()=>{
         cy.get('#username').type(info[0])
         cy.get('#password').type(info[1])
         cy.get('.btn-primary').click()
+        cy.get('h1.ng-binding').should("contain.text","Hi "+info[0]+"!")
 
 
     })
@@ -51,7 +41,7 @@ describe("Testes de criação, registro e login", ()=>{
         cy.get('#Text1').type(id)
         cy.get('#username').type(id)
         cy.get('#password').type(senha)
-        cy.get('.form-actions').click()
+        cy.get('.btn-primary').click()
         cy.get('.ng-binding').should("contain.text","Registration successful")
 
         return info
