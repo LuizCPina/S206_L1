@@ -9,6 +9,9 @@ describe("Testes de criação, registro e login", ()=>{
         cy.get('#Text1').type(info[0])
         cy.get('#username').type(info[0])
         cy.get('#password').type(info[1])
+        cy.get('.btn-primary').click()
+        cy.get('.ng-binding').should("contain.text","Registration succesful")
+
        
         
     })
@@ -28,6 +31,7 @@ describe("Testes de criação, registro e login", ()=>{
         cy.visit('https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login')
         cy.get('#username').type(info[0])
         cy.get('#password').type(info[1])
+        cy.get('.btn-primary').click()
 
 
     })
