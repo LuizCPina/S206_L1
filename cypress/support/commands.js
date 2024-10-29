@@ -23,9 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+//Cypress.Commands.add('login',(username,password)=>{
+  //  cy.visit('https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login')
+    //cy.get('#username').type(username)
+    //cy.get('#password').type(password)
+    //cy.get('.btn-primary').click()
+//})
+
 Cypress.Commands.add('login',(username,password)=>{
-    cy.visit('https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login')
-    cy.get('#username').type(username)
-    cy.get('#password').type(password)
-    cy.get('.btn-primary').click()
+    cy.visit('https://buggy.justtestit.org')
+    cy.get('.input-sm').type(username)
+    cy.get('.form-inline > .form-group > [name="password"]').type(password)
+    cy.get('.btn-success').click()
 })
