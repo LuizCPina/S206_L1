@@ -1,0 +1,7 @@
+1. Os teste desenvolvidos são automatizados, criei um script que faz a requisição no site para mim e me retorna o que quero
+2. Todos testes desenvolvidos são e2e, como disse crio requisições para o site, então exploro as chamadas de fim a fim
+3. É necessário garantir que os teste possam ser executavéis de forma repetida, e são, automatizada e que validem o comportamento da aplicação
+
+para rodar os testes, deve se ter newman instalado, usando: npm install -g newman
+em seguida se usa o comando: newman run "Lista2_S206.postman_collection.json" -e "LISTA2.postman_environment.json"
+caso deseje criar um html com os testes organizados, use o comando: newman run "Lista2_S206.postman_collection.json" -e "LISTA2.postman_environment.json" -r htmlextra
