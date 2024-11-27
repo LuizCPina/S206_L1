@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "edda79c1-076f-476f-9010-2ace580beb54",
+		"name": "Prova_S206",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39347536"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "GET piada inexistente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://v2.jokeapi.dev/joke/Paiting",
+							"protocol": "https",
+							"host": [
+								"v2",
+								"jokeapi",
+								"dev"
+							],
+							"path": [
+								"joke",
+								"Paiting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET piada existente aleatória",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://v2.jokeapi.dev/joke/any",
+							"protocol": "https",
+							"host": [
+								"v2",
+								"jokeapi",
+								"dev"
+							],
+							"path": [
+								"joke",
+								"any"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET piada dark",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://v2.jokeapi.dev/joke/dark",
+							"protocol": "https",
+							"host": [
+								"v2",
+								"jokeapi",
+								"dev"
+							],
+							"path": [
+								"joke",
+								"dark"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET piada not found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://v2.jokeapi.dev/joker/naoseioque",
+							"protocol": "https",
+							"host": [
+								"v2",
+								"jokeapi",
+								"dev"
+							],
+							"path": [
+								"joker",
+								"naoseioque"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Post correto no httpbin nulo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://httpbin.org/post",
+							"protocol": "https",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post correto no httpbin com piadinnha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"single\",\r\n    \"joke\": \"hahahah piadocas vitinho\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://httpbin.org/post",
+							"protocol": "https",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
